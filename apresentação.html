@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manutenção e Informática de Computadores</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --cyan: #00e5ff;
+    --blue: #3478ff;
+    --purple: #9b5cff;
+    --bg: #070b18;
+    --card: rgba(19, 30, 56, .78);
+    --white: #f4f7ff;
+    --muted: #a9b5ce;
+}
+
+* { box-sizing: border-box; }
+
+.reveal {
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    background:
+        radial-gradient(ellipse at 15% 15%, rgba(0,229,255,.12), transparent 40%),
+        radial-gradient(ellipse at 85% 85%, rgba(155,92,255,.13), transparent 40%),
+        var(--bg);
+}
+
+.reveal .slides section {
+    text-align: left;
+    height: 100%;
+    padding: 25px 45px;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    text-transform: none;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.reveal h2 {
+    font-size: 1.45em;
+    margin-bottom: 28px;
+}
+
+.reveal h3 {
+    font-size: 1.5em;
+}
+
+.reveal p {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: .68em;
+}
+
+.reveal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reveal li {
+    font-size: .66em;
+    color: #dce6f8;
+    margin: 13px 0;
+    line-height: 1.45;
+}
+
+.reveal li::before {
+    content: "✦";
+    color: var(--cyan);
+    margin-right: 12px;
+}
+
+.tag {
+    color: var(--cyan);
+    font-size: .45em;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.gradient {
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.line {
+    height: 4px;
+    width: 75px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    margin: 18px 0 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+    margin-top: 28px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid rgba(0,229,255,.17);
+    border-radius: 17px;
+    padding: 23px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.15);
+}
+
+.card h3 {
+    font-size: .78em;
+    color: var(--cyan);
+    margin: 8px 0;
+    letter-spacing: 0;
+}
+
+.card p {
+    font-size: .53em;
+    margin: 5px 0;
+}
+
+.icon {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
+.number {
+    font-size: 1.7em;
+    font-weight: 900;
+    color: var(--cyan);
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    left: 45px;
+    right: 45px;
+    display: flex;
+    justify-content: space-between;
+    color: #75839e;
+    font-size: .35em;
+    letter-spacing: 2px;
+}
+
+.cover {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cover h1 {
+    font-size: 2.05em;
+    line-height: 1.18;
+    max-width: 850px;
+    margin: 10px 0;
+}
+
+.cover .subtitle {
+    font-size: .8em;
+    max-width: 650px;
+}
+
+.cover-info {
+    margin-top: 45px;
+    border-left: 3px solid var(--cyan);
+    padding-left: 20px;
+}
+
+.cover-info p {
+    font-size: .52em;
+    margin: 5px 0;
+}
+
+.highlight {
+    color: var(--cyan);
+    font-weight: 800;
+}
+
+.big-number {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: var(--cyan);
+}
+
+.progress-box {
+    background: rgba(0,229,255,.07);
+    border: 1px solid rgba(0,229,255,.2);
+    padding: 25px;
+    border-radius: 18px;
+    margin-top: 20px;
+}
+
+.reveal .controls {
+    color: var(--cyan);
+}
+
+.reveal .progress {
+    color: var(--cyan);
+    height: 4px;
+}
+
+.reveal .slide-number {
+    color: var(--cyan);
+    background: transparent;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .reveal .slides section {
+        padding: 15px 20px;
+    }
+
+    .grid {
+        gap: 9px;
+    }
+
+    .card {
+        padding: 13px;
+    }
+
+    .reveal li {
+        font-size: .58em;
+    }
+
+    .footer {
+        left: 20px;
+        right: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1 -->
+<section class="cover">
+
+    <div class="tag">TECNOLOGIA • FORMAÇÃO PROFISSIONAL</div>
+
+    <div class="icon">💻 ⚡</div>
+
+    <h1>
+        MANUTENÇÃO E<br>
+        <span class="gradient">INFORMÁTICA</span><br>
+        DE COMPUTADORES
+    </h1>
+
+    <div class="line"></div>
+
+    <p class="subtitle">
+        Montagem, configuração, redes, segurança
+        digital e desenvolvimento.
+    </p>
+
+    <div class="cover-info">
+        <p><strong>APRESENTADORA:</strong> Julia Chaves</p>
+        <p>25 de novembro de 2026 • Quarta-feira</p>
+    </div>
+
+    <div class="footer">
+        <span>PROJETO DE CONCLUSÃO</span>
+        <span>01 / 08</span>
+    </div>
+</section>
+
+<!-- SLIDE 2 -->
+<section>
+    <div class="tag">01 • APRESENTAÇÃO</div>
+    <h2>Visão geral do <span class="gradient">curso</span></h2>
+    <div class="line"></div>
+
+    <p>
+        Uma formação completa para conhecer, compreender
+        e dominar diferentes áreas da informática.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🖥️</div>
+            <h3>Hardware</h3>
+            <p>Montagem, manutenção e configuração de computadores.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Software</h3>
+            <p>Sistemas operacionais, programas e ferramentas.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Redes e segurança</h3>
+            <p>Conectividade, proteção de dados e segurança digital.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👾</div>
+            <h3>Desenvolvimento</h3>
+            <p>Criação de sites, jogos e projetos tecnológicos.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <span>FORMAÇÃO EM TECNOLOGIA</span>
+        <span>02 / 08</span>
+    </div>
+</section>
+
+<!-- SLIDE 3 -->
+<section>
+    <div class="tag">02 • HARDWARE</div>
+    <h2>Montagem e <span class="gradient">manutenção</span></h2>
+    <div class="line"></div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🔩</div>
+            <h3>Componentes</h3>
+            <p>Conhecimento e identificação das peças essenciais do computador.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛠️</div>
+            <h3>Montagem</h3>
+            <p>Montagem, desmontagem e substituição de componentes.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧹</div>
+            <h3>Limpeza</h3>
+            <p>Cuidados físicos e conservação dos equipamentos.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔍</div>
+            <h3>Diagnóstico</h3>
+            <p>Identificação de defeitos e manutenção preventiva e corretiva.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <span>HARDWARE NA PRÁTICA</span>
+        <span>03 / 08</span>
+    </div>
+</section>
+
+<!-- SLIDE 4 -->
+<section>
+    <div class="tag">03 • SISTEMAS</div>
+    <h2>Configuração de <span class="gradient">sistemas</span></h2>
+    <div class="line"></div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">💿</div>
+            <h3>Windows</h3>
+            <p>Instalação e formatação de sistemas operacionais.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>BIOS e UEFI</h3>
+            <p>Configuração e ajustes de inicialização do computador.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📂</div>
+            <h3>Armazenamento</h3>
+            <p>Particionamento de discos, backups e organização de arquivos.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔧</div>
+            <h3>Drivers</h3>
+            <p>Instalação de drivers e ferramentas de diagnóstico.</p>
+        </div>
+
+    </div>
+
+    <div class="progress-box">
+        <span class="highlight">CONHECIMENTO IMPORTANTE</span>
+        <p>
+            Backups regulares ajudam a proteger arquivos importantes
+            e reduzir os riscos de perda de dados.
+        </p>
+    </div>
+
+    <div class="footer">
+        <span>CONFIGURAÇÃO E SOFTWARE</span>
+        <span>04 / 08</span>
+    </div>
+</section>
+
+<!-- SLIDE 5 -->
+<section>
+    <div class="tag">04 • CONECTIVIDADE</div>
+    <h2>Redes e <span class="gradient">segurança digital</span></h2>
+    <div class="line"></div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">📡</div>
+            <h3>Conexões</h3>
+            <p>Configuração de roteadores, redes Wi-Fi e endereçamento IP.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔌</div>
+            <h3>Cabeamento</h3>
+            <p>Crimpagem de cabos RJ45 e funcionamento das conexões.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>Proteção</h3>
+            <p>Antivírus, proteção de dados e boas práticas digitais.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔐</div>
+            <h3>Prevenção</h3>
+            <p>Identificação de ameaças e proteção dos sistemas.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <span>REDES E PROTEÇÃO</span>
+        <span>05 / 08</span>
+    </div>
+</section>
+
+<!-- SLIDE 6 -->
+<section>
+    <div class="tag">05 • PROGRAMAÇÃO</div>
+    <h2>Desenvolvimento web e <span class="gradient">jogos</span></h2>
+    <div class="line"></div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="number">01</div>
+            <h3>Desenvolvimento web</h3>
+            <p>Criação de sites utilizando HTML, CSS e JavaScript no Visual Studio Code.</p>
+        </div>
+
+        <div class="card">
+            <div class="number">02</div>
+            <h3>Criação de jogos</h3>
+            <p>Desenvolvimento de dois jogos: Arcade e um jogo temático de Manutenção de Computadores.</p>
+        </div>
+
+        <div class="card">
+            <div class="number">03</div>
+            <h3>Criatividade</h3>
+            <p>Estímulo ao raciocínio lógico, criatividade e organização.</p>
+        </div>
+
+        <div class="card">
+            <div class="number">04</div>
+            <h3>Aprendizado</h3>
+            <p>Conhecimentos de programação e design aplicados aos projetos.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <span>CRIATIVIDADE E INOVAÇÃO</span>
+        <span>06 / 08</span>
+    </div>
+</section>
+
+<!-- SLIDE 7 -->
+<section>
+    <div class="tag">06 • MINHA TRAJETÓRIA</div>
+    <h2>Quando eu entrei <span class="gradient">no curso...</span></h2>
+    <div class="line"></div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Conhecimento inicial</h3>
+            <p>
+                Meu conhecimento sobre a área era básico.
+                Conhecia alguns componentes do computador
+                e suas funções.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Minha experiência</h3>
+            <p>
+                Sabia para que servia a formatação,
+                mas ainda não tinha experiência prática
+                com manutenção e desmontagem.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="progress-box">
+        <span class="highlight">MEU PONTO DE PARTIDA</span>
+        <p>
+            Ainda precisava desenvolver conhecimentos sobre
+            identificação de defeitos e resolução de problemas técnicos.
+        </p>
+    </div>
+
+    <div class="footer">
+        <span>MINHA EVOLUÇÃO</span>
+        <span>07 / 08</span>
+    </div>
+</section>
+
+<!-- SLIDE 8 -->
+<section>
+    <div class="tag">07 • CONQUISTAS</div>
+    <h2>Como estou saindo <span class="gradient">do curso!</span></h2>
+    <div class="line"></div>
+
+    <div class="card">
+        <div class="icon">🚀</div>
+        <p style="font-size:.7em; color:#e5edff;">
+            Durante o curso, evoluí bastante, passando de conhecimentos
+            básicos para aprendizados teóricos e práticos. Aprendi a
+            identificar problemas, buscar soluções, desenvolver projetos
+            e conhecer melhor as possibilidades da área de tecnologia.
+            Sei que ainda tenho muito a aprender, mas considero o curso
+            essencial para meu crescimento pessoal e profissional.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">💡</div>
+            <h3>Mais conhecimento</h3>
+            <p>Aprendizados técnicos e novas habilidades.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>Novos objetivos</h3>
+            <p>Mais confiança para enfrentar desafios e continuar evoluindo.</p>
+        </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:25px;">
+        <h3 class="gradient">OBRIGADA!</h3>
+        <p>Conhecimento é o primeiro passo para transformar o futuro.</p>
+    </div>
+
+    <div class="footer">
+        <span>JULIA CHAVES • 2026</span>
+        <span>08 / 08</span>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+
+<script>
+Reveal.initialize({
+    hash: true,
+    transition: 'slide',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    controls: true,
+    progress: true,
+    slideNumber: true,
+    keyboard: true,
+    center: false,
+    width: 1100,
+    height: 700,
+    margin: 0.06,
+    minScale: 0.2,
+    maxScale: 1.5
+});
+</script>
+
+</body>
+</html>
